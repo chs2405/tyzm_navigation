@@ -4,14 +4,11 @@
     <title>12星座传说</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body style="background-color: #4169e1">
+  <body>
     <!-- 按不到的边框（现在按得到了） -->
-    <nav
-      class="w3-sidebar w3-white w3-collapse w3-top w3-large w3-padding"
-      style="z-index: 3; width: 300px; font-weight: bold"
-      id="mySidebar"
-    >
+    <nav id="mySidebar">
       <br />
       <a
         href="javascript:void(0)"
@@ -132,44 +129,18 @@
     </header>
 
     <!-- kopi02 -->
-    <div
-      class="w3-overlay w3-hide-large"
-      onclick="w3_close()"
-      style="cursor: pointer"
-      title="close side menu"
-      id="myOverlay"
-    ></div>
+    <div onclick="w3_close()" title="close side menu" id="myOverlay"></div>
 
     <!-- !PAGE CONTENT! -->
-    <div class="w3-main" style="margin-left: 340px; margin-right: 40px">
+    <div>
       <!-- 主页（置顶） -->
-      <div class="w3-container" style="margin-top: 80px" id="主页">
-        <h1 class="style=" font-size:300%; style="color: powderblue">
+      <div id="主页">
+        <h1>
           <b>图书馆学会宇宙特展天宇之眸</b>
         </h1>
         <h4>
           从古至今，人们对宇宙的探索就从未停止。身为宇宙的一份子，我们应该了解宇宙。我们期望能从本次特展激发大家对宇宙的好奇心，同时深入了解宇宙的辽阔和神秘。
         </h4>
-        <style>
-          .button {
-            background-image: url('your_image_url_here.jpg'); /* 将 'your_image_url_here.jpg' 替换为您想要使用的图像的URL */
-            width: 200px; /* 按钮宽度 */
-            height: 50px; /* 按钮高度 */
-            border: none; /* 去掉按钮的边框 */
-            color: white; /* 按钮文本颜色 */
-            text-align: center; /* 文本居中 */
-            text-decoration: none; /* 去掉链接的下划线 */
-            display: inline-block; /* 设置为行内块级元素 */
-            font-size: 16px; /* 字体大小 */
-            cursor: pointer; /* 光标样式 */
-          }
-          </style>
-          </head>
-          <body>
-          
-          <button class="button">Click Me</button>
-          
-          </body>
         <a
           href="https://www.instagram.com/chsbp_lib/"
           title="Go to W3Schools HTML section"
@@ -198,7 +169,8 @@
         </h1>
         <h4>
           特寒里亚国王阿塔玛斯和王妃涅佩拉结婚，两人生了一对双胞胎，但国王却和特贝的公主伊诺娃有段婚外情，将涅佩拉王妃赶出宫，而迎立诺娃为新妃。当伊诺娃王妃有了自己的孩子后，乃决定要杀死前涅佩拉王妃所留下的唯一双胞胎，(哥哥是普里克思，妹妹是赫雷)。她收买占卜师向国王告状：若不将前王妃所生的孩子送给宙斯当祭品，众神将大怒，则今年将闹饥荒。涅佩拉知道后就向宙斯求救，于是宙斯就派天上的黄金白羊去载这两兄妹至天空彼方。因速度太快，妹妹跌落大海，白羊就一边回头看妹妹，一边守护着哥哥，而形成现今的白羊。
-        </h4>        <img
+        </h4>
+        <img
           src="01/旧大门.JPG"
           alt="旧大门"
           width="700"
@@ -418,13 +390,8 @@
       </div>
 
       <!-- Modal for full size images on click-->
-      <div
-        id="modal01"
-        class="w3-modal w3-black"
-        style="padding-top: 0"
-        onclick="this.style.display='none'"
-      >
-        <span class="w3-button w3-black w3-display-topright">关闭</span>
+      <div id="modal01">
+        <span>关闭</span>
         <div
           class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64"
         >
@@ -434,33 +401,9 @@
       </div>
 
       <!-- kopi03 -->
-      <div
-        class="w3-light-grey w3-container w3-padding-32"
-        style="margin-top: 60px; padding-right: 50px"
-      >
+      <div>
         <p class="w3-left"><a>Powered by 图书馆学会理事层</a></p>
       </div>
-
-      <script>
-        // Script to open and close sidebar
-        function w3_open() {
-          document.getElementById("mySidebar").style.display = "block";
-          document.getElementById("myOverlay").style.display = "block";
-        }
-
-        function w3_close() {
-          document.getElementById("mySidebar").style.display = "none";
-          document.getElementById("myOverlay").style.display = "none";
-        }
-
-        // Modal Image Gallery
-        function onClick(element) {
-          document.getElementById("img01").src = element.src;
-          document.getElementById("modal01").style.display = "block";
-          var captionText = document.getElementById("caption");
-          captionText.innerHTML = element.alt;
-        }
-      </script>
     </div>
     <script src="app.js"></script>
   </body>
