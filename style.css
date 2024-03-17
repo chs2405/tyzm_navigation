@@ -53,8 +53,9 @@ body {
   text-align: center;
 }
 .content {
-  width: 80%;
+  width: 85%;
   padding: 10%;
+  line-height: 1.8;
 }
 .navbar {
   padding: 25px;
@@ -79,6 +80,7 @@ body {
   background-color: #ffffff;
   margin: 5px;
   pointer-events: none;
+  border-radius: 3px;
 }
 
 .panel {
@@ -86,12 +88,11 @@ body {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
-
   width: 250px;
   height: 100vh;
   position: fixed;
   top: 0;
-  left: 0; /* Closed by default */
+  left: -250px; /* Closed by default */
   transition: left 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -107,12 +108,11 @@ body {
   height: 80%;
 }
 
-.menu li {
-}
-
 .menu a {
   color: #fff;
   text-decoration: none;
+  font-family: cf;
+  font-size: 30px;
 }
 
 .content {
@@ -131,14 +131,31 @@ body {
   }
 }
 .draw-animate {
-  animation: drawAnimate 3s ease;
+  animation: drawAnimate 3s linear;
   animation-fill-mode: forwards;
   stroke-dasharray: 355;
   stroke-dashoffset: 355;
   opacity: 1;
 }
 .svgbg-animation {
-  animation: blink 3s infinite;
+  animation: blink 3s infinite ease;
+}
+.arrow-animation {
+  animation: arrow 3s infinite ease;
+}
+@keyframes arrow {
+  0% {
+    transform: translateY(200%);
+    padding-top: 0;
+  }
+  50% {
+    transform: translateY(100%);
+    padding-top: 10px;
+  }
+  100% {
+    transform: translateY(200%);
+    padding-top: 0;
+  }
 }
 @keyframes drawAnimate {
   to {
@@ -147,12 +164,15 @@ body {
 }
 @keyframes blink {
   0% {
-    opacity: 0;
+    opacity: 0.1;
+    transform: scale(1);
   }
   50% {
     opacity: 1;
+    transform: scale(50);
   }
   100% {
-    opacity: 0;
+    opacity: 0.1;
+    transform: scale(1);
   }
 }
