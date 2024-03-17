@@ -1,18 +1,28 @@
-// Script to open and close sidebar
-function w3_open() {
-  document.getElementById("mySidebar").style.display = "block";
-  document.getElementById("myOverlay").style.display = "block";
-}
+document.addEventListener("DOMContentLoaded", function () {
+  var panel = document.getElementById("panel");
+  var hamburger = document.querySelector(".hamburger");
 
-function w3_close() {
-  document.getElementById("mySidebar").style.display = "none";
-  document.getElementById("myOverlay").style.display = "none";
-}
+  // Close the panel by default
+  panel.style.left = "-250px";
 
-// Modal Image Gallery
-function onClick(element) {
-  document.getElementById("img01").src = element.src;
-  document.getElementById("modal01").style.display = "block";
-  var captionText = document.getElementById("caption");
-  captionText.innerHTML = element.alt;
-}
+  function togglePanel() {
+    if (panel.style.left === "0px" || panel.style.left === "") {
+      panel.style.left = "-250px";
+    } else {
+      panel.style.left = "0px";
+    }
+  }
+
+  function closePanel(event) {
+    if (
+      event.target !== panel &&
+      !panel.contains(event.target) &&
+      event.target !== hamburger
+    ) {
+      panel.style.left = "-250px";
+    }
+  }
+
+  hamburger.addEventListener("click", togglePanel);
+  document.addEventListener("click", closePanel);
+});
