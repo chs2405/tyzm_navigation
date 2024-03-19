@@ -1,7 +1,16 @@
+const path = document.querySelector(".draw-animate");
+var length = path.getTotalLength();
+path.setAttribute(
+  "style",
+  "stroke-dasharray: " + length + ";stroke-dashoffset: " + length + "; "
+);
+path.innerHTML =
+  "<animate attributeName='stroke-dashoffset' begin='0s' dur='" +
+  length / 100 +
+  "s' to='0' fill='freeze' />";
 document.addEventListener("DOMContentLoaded", function () {
   var panel = document.getElementById("panel");
   var hamburger = document.querySelector(".hamburger");
-
   // Close the panel by default
   panel.style.left = "-250px";
 

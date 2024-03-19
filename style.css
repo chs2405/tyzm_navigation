@@ -86,8 +86,8 @@ body {
 .panel {
   background: rgba(255, 255, 255, 0.26);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
   width: 250px;
   height: 100vh;
   position: fixed;
@@ -130,13 +130,7 @@ body {
     width: 150px; /* Further adjust panel width for even smaller screens */
   }
 }
-.draw-animate {
-  animation: drawAnimate 3s linear;
-  animation-fill-mode: forwards;
-  stroke-dasharray: 355;
-  stroke-dashoffset: 355;
-  opacity: 1;
-}
+
 .svgbg-animation {
   animation: blink 3s infinite ease;
 }
